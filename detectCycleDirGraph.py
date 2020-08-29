@@ -16,9 +16,17 @@ class Graph():
         #keep count of vertices which have incoming node pointers
         #in degree 0 means this is not a child node of any node
         in_degree=[0]*n
+        '''
         for i in range(n):
             for j in graph[i]:
                 in_degree[j]+=1
+        '''
+        for key,value in graph.items():
+            for v in value:
+                in_degree[v]+=1
+                
+        
+        print(in_degree)
         
         queue=[]
         for i in range(len(in_degree)):
